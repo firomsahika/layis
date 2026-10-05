@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+@layer base {
+  /* Default Brand Theme: NOIR / BLACK (Official LAYIS Haute Couture) */
+  :root,
+  html[data-theme="black"],
+  .theme-black {
+    --bg-primary: #0C0C0C;
+    --bg-secondary: #121214;
+    --bg-tertiary: #18181A;
+    --bg-card: #141416;
+    --bg-card-hover: #1C1C20;
+    --bg-input: #18181A;
+    --bg-glass: rgba(12, 12, 12, 0.90);
+    --text-primary: #FFFFFF;
+    --text-secondary: #E4E4E7;
+    --text-muted: #A1A1AA;
+    --text-faint: #71717A;
+    --border-color: rgba(255, 255, 255, 0.10);
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --border-strong: rgba(255, 255, 255, 0.22);
+    --accent-gold: #D4AF37;
+    --accent-gold-glow: rgba(212, 175, 55, 0.18);
+    --accent-bronze: #BFA15F;
+    --card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.85);
+    --watermark-color: rgba(255, 255, 255, 0.09);
+    --vignette-color: #0C0C0C;
+    --badge-bg: rgba(255, 255, 255, 0.10);
+    --badge-text: #FFFFFF;
+    --badge-spin-text: #A1A1AA;
+    --pill-bg: rgba(255, 255, 255, 0.05);
+    --pill-border: rgba(255, 255, 255, 0.20);
+    --pill-text: #FFFFFF;
+    --pill-hover-bg: #FFFFFF;
+    --pill-hover-text: #000000;
+    --scrollbar-track: #0C0C0C;
+    --scrollbar-thumb: #282828;
+    --scrollbar-thumb-hover: #D4AF37;
+  }
+
+  /* Blanc / White Theme (High-Fashion Ivory / Off-White Atelier Aesthetic) */
+  html[data-theme="white"],
+  .theme-white {
+    --bg-primary: #FAF9F6;
+    --bg-secondary: #F3F1EC;
+    --bg-tertiary: #ECE8E0;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F8F7F4;
+    --bg-input: #FFFFFF;
+    --bg-glass: rgba(250, 249, 246, 0.94);
+    --text-primary: #0A0A0C;
+    --text-secondary: #27272A;
+    --text-muted: #52525B;
+    --text-faint: #71717A;
+    --border-color: rgba(0, 0, 0, 0.10);
+    --border-subtle: rgba(0, 0, 0, 0.06);
+    --border-strong: rgba(0, 0, 0, 0.25);
+    --accent-gold: #BFA15F;
+    --accent-gold-glow: rgba(191, 161, 95, 0.15);
+    --accent-bronze: #8C733E;
+    --card-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.07);
+    --watermark-color: rgba(0, 0, 0, 0.08);
+    --vignette-color: #FAF9F6;
+    --badge-bg: rgba(0, 0, 0, 0.06);
+    --badge-text: #0A0A0C;
+    --badge-spin-text: #52525B;
+    --pill-bg: #FFFFFF;
+    --pill-border: rgba(0, 0, 0, 0.22);
+    --pill-text: #0A0A0C;
+    --pill-hover-bg: #0A0A0C;
+    --pill-hover-text: #FFFFFF;
+    --scrollbar-track: #FAF9F6;
+    --scrollbar-thumb: #D8D2C5;
+    --scrollbar-thumb-hover: #BFA15F;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+
+  /* Custom luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+  }
+}
+
+/* Luxury Editorial Styling Utilities matching reference design */
+.font-serif-luxury {
+  font-family: 'Bodoni Moda', 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
+.font-sans-luxury {
+  font-family: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+/* Subtle Ethiopian Tibeb Geometric Accent Border */
+.tibeb-border-gold {
+  border-image: linear-gradient(to right, #D4AF37, #BFA15F, #8C733E, #D4AF37) 1;
+}
+
+.tibeb-pattern-subtle {
+  background-image: radial-gradient(#D4AF37 0.75px, transparent 0.75px), radial-gradient(#8C733E 0.75px, transparent 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Noise overlay for luxury paper / raw cotton texture feel */
+.bg-raw-cotton {
+  background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Micro-transitions */
+.transition-luxury {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Continuous Runway Marquee Animation */
+@keyframes runwayMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes runwayMarqueeReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-runway-marquee {
+  display: flex;
+  width: max-content;
+  animation: runwayMarquee 38s linear infinite;
+}
+
+.animate-runway-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: runwayMarqueeReverse 42s linear infinite;
+}
+
+.animate-runway-marquee:hover,
+.animate-runway-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Shimmer Sheen on Garment Cards */
+@keyframes shimmerGlow {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(0.98);
+  }
+}
+
+.animate-shimmer-glow {
+  animation: shimmerGlow 4s ease-in-out infinite;
+}
+
+/* Haute Couture Monochrome Filter for Gallery Lookbook */
+.filter-monochrome {
+  filter: grayscale(100%) contrast(110%);
+}
+
+.filter-monochrome:hover {
+  filter: grayscale(0%) contrast(100%);
+  transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
